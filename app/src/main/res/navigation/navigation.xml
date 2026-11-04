@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentInici">
+
+    <fragment
+        android:id="@+id/fragmentInici"
+        android:name="com.mojalu75.fragment.FragmentInici"
+        android:label="FragmentInici" >
+        <action
+            android:id="@+id/action_fragmentInici_to_primerFragment"
+            app:destination="@id/primerFragment" />
+        <action
+            android:id="@+id/action_fragmentInici_to_segonFragment"
+            app:destination="@id/segonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/segonFragment"
+        android:name="com.mojalu75.fragment.SegonFragment"
+        android:label="fragment_segon"
+        tools:layout="@layout/fragment_segon" />
+    <fragment
+        android:id="@+id/primerFragment"
+        android:name="com.mojalu75.fragment.PrimerFragment"
+        android:label="PrimerFragment" >
+        <action
+            android:id="@+id/action_primerFragment_to_finalFragment"
+            app:destination="@id/finalFragment"
+            app:popUpTo="@id/fragmentInici" />
+    </fragment>
+    <fragment
+        android:id="@+id/finalFragment"
+        android:name="com.mojalu75.fragment.FinalFragment"
+        android:label="fragment_final"
+        tools:layout="@layout/fragment_final" />
+</navigation>
